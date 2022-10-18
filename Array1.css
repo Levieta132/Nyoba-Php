@@ -1,0 +1,17 @@
+.body {
+    background-image: url("Tes.jpg.jpg");
+    background-repeat: no-repeat;
+    background-position: auto;
+    background-size: 1750px;
+}
+
+.img{
+    width: 40%;
+    height: 10%;
+    border: 1px grey solid;
+    border-radius: 25%;
+    Padding: 2px;
+}
+.h2 {
+color: #efefef
+}
