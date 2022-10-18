@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array 1</title>
+    <style>
+        body {
+            background-image: url("Tes.jpg");
+            background-repeat: no-repeat;
+            background-position: auto;
+            background-size: 1750px;
+        }
+        img{
+            width: 50%;
+            height: 70%;
+            border: 1px grey solid;
+            border-radius: 20%;
+            Padding: 2px;
+        }
+        h3{
+            color: #efefef
+        }
+        tbody{
+            border-radius: 10px;
+            background-color: rgba(218, 218, 218, 0.7);
+            box-shadow: 0 0 10px rgba(97, 96, 96, 0.7);
+        }
+
+
+    </style>
+</head>
+<body>
+    <table width=650 cellspacing=0 cellpadding=8 Align=center border=1>
+    <caption><h3>Daftar Siswa</h3></caption>
+        <thead>
+            <tr bgcolor="#dddddd">
+                <th>No</th>
+                <th>UID</th>
+                <th>Nama Siswa</th>
+                <th>Kelas</th>
+                <th>Jenis Kelamin</th>
+                <th>Jurusan</th>
+                <th>Foto</th>
+            </tr>
+        </thead>
+        
+        <tbody bgcolor="#dddddd">
+            <?php
+            foreach($siswa as $no => $data):
+            ?>
+            <tr>
+                <td align="center" ><?= $no + 1 . "."; ?></td>
+                <td><?= $data["UID"]; ?></td>
+                <td><?= $data["Nama"]; ?></td>
+                <td align="center"><?= $data["Kelas"]; ?></td>
+                <td align="center"><?php
+                if($data["JK"] == "L"){
+                    echo "Laki-Laki";
+                } else{
+                    echo "Perempuan";
+                } ?></td>
+                <td align="center"><?= $data["Jurusan"]; ?></td>
+                <td align="center"><img src=<?= "Fotos/" . $data["Foto"]; ?> alt=<?= $data["Foto"]; ?>></td>
+            </tr>
+            <?php
+            endforeach
+            ?>
+        </tbody>
+    </table>
+</body>
+</html>
